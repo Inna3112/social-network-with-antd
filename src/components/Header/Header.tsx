@@ -1,7 +1,5 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
-import s from './Header.module.css';
+import {Link} from 'react-router-dom';
 import {Avatar, Button, Col, Layout, Menu, Row} from "antd";
 import {UserOutlined} from "@ant-design/icons";
 
@@ -40,14 +38,6 @@ const Header = ({isAuth, logout}: PropsType) => {
 
             </Row>
         </Header>
-        // <header className={s.header}>
-        //     <img src={logo}  />
-        //     <div className={s.loginBlock}>
-        //         {isAuth
-        //             ? <div>{login}<button onClick={logout}>log out</button></div>
-        //             : <NavLink to={'/login'}>Login</NavLink>}
-        //     </div>
-        // </header>
     )
 }
 

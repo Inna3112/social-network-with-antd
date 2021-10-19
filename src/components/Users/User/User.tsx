@@ -3,6 +3,7 @@ import s from './User.module.css'
 import avaPost from './../../../assets/images/avaPost.png'
 import {NavLink} from 'react-router-dom';
 import {UsersType} from '../../../redux/users-reducer';
+import {Descriptions} from 'antd';
 
 type PropsType = {
     user: UsersType
@@ -30,16 +31,21 @@ let User: React.FC <PropsType> = ({user, follow, unFollow, followingInProgress})
                             : <button disabled={followingInProgress.some(id => id === user.id)} onClick={onClickFollowHandler} className={s.button}>Follow</button>}
                     </div>
                 </div>
-                <div className={s.content}>
-                    <div className={s.nameAndStatus}>
-                        <div className={s.name}>{user.name}</div>
-                        <div className={s.status}>{user.status}</div>
-                    </div>
-                    <div className={s.location}>
-                        <div className={s.country}>{'u.location.country'}</div>
-                        <div className={s.city}>{'u.location.city'}</div>
-                    </div>
-                </div>
+                <Descriptions layout="vertical" labelStyle={{fontWeight: 'bold'}} >
+                    <Descriptions.Item label="UserName">{user.name}</Descriptions.Item>
+                    <Descriptions.Item label="UserStatus">{user.status}</Descriptions.Item>
+                </Descriptions>
+
+                {/*<div className={s.content}>*/}
+                {/*    <div className={s.nameAndStatus}>*/}
+                {/*        <div className={s.name}>{user.name}</div>*/}
+                {/*        <div className={s.status}>{user.status}</div>*/}
+                {/*    </div>*/}
+                {/*    <div className={s.location}>*/}
+                {/*        <div className={s.country}>{'u.location.country'}</div>*/}
+                {/*        <div className={s.city}>{'u.location.city'}</div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
             </div>
         }
 

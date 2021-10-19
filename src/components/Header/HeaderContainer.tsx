@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {AppStateType} from '../../redux/redux-store';
 import Header from './Header';
 import {logout} from '../../redux/auth-reducer';
-import {compose} from "redux";
+import {compose} from 'redux';
 
 
 type MapStatePropsType = {
@@ -23,7 +23,6 @@ class AuthContainer extends React.Component<PropsType> {
 
     render() {
         return <>
-            {/*{this.props.isFetching ? <Preloader /> : null}*/}
             <Header login={this.props.login} isAuth={this.props.isAuth} logout={this.props.logout}/>
         </>
     }
@@ -38,9 +37,6 @@ const mapStateToProps = (state: AppStateType) => {
     }
 }
 
-// export default connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {
-//      logout
-// })(AuthContainer)
 
 export default compose<ComponentType>(
     connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps,
