@@ -1,0 +1,25 @@
+.paginator {
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    margin: 10px;
+}
+
+.prevBtn {
+    margin: 5px 1px 0 1px;
+}
+
+.page {
+    border: 1px solid grey;
+    cursor: pointer;
+    margin: 5px 1px 0 0;
+}
+
+.selectedPage {
+    font-weight: bold;
+    border-color: black;
+}
+
+.nextBtn {
+    margin: 5px 1px 0 0;
+}
