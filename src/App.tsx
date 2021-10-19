@@ -7,9 +7,8 @@ import {AppStateType} from './redux/redux-store';
 import {appStateType, initializeApp} from './redux/app-reducer';
 import {Layout, Menu, Breadcrumb, Spin} from 'antd';
 import {UserOutlined, LaptopOutlined} from '@ant-design/icons';
-import {withSuspense} from "./HOC/withSuspense";
-import HeaderContainer from "./components/Header/HeaderContainer";
-import { LoadingOutlined } from '@ant-design/icons';
+import {withSuspense} from './HOC/withSuspense';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 
 const {SubMenu} = Menu;
@@ -86,7 +85,7 @@ class App extends React.Component<PropsType & RouteComponentProps> {
                         </Content>
                     </Layout>
                 </Content>
-                <Footer style={{textAlign: 'center'}}>Ant Design ©2018 Created by Ant UED</Footer>
+                <Footer style={{textAlign: 'center'}}>Social network ©2021 Created by Inna Fomichova</Footer>
             </Layout>
         }
     }

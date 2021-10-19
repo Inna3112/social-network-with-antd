@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './User.module.css'
-import avaPost from './../../../assets/images/avaPost.png'
 import {NavLink} from 'react-router-dom';
 import {UsersType} from '../../../redux/users-reducer';
-import {Descriptions} from 'antd';
+import {Avatar, Button, Descriptions} from 'antd';
+import {UserOutlined} from "@ant-design/icons";
 
 type PropsType = {
     user: UsersType
@@ -21,14 +21,20 @@ let User: React.FC <PropsType> = ({user, follow, unFollow, followingInProgress})
                 <div className={s.followingBlock}>
                     <div>
                         <NavLink to={'/profile/' + user.id}>
-                            <img src={user.photos.small ? user.photos.small : avaPost}
-                                  alt={'Users photo'} className={s.img} />
+                            <Avatar size={64} icon={<UserOutlined />} src={user.photos.small && user.photos.small}/>
                         </NavLink>
                     </div>
                     <div>
                         {user.followed
-                            ? <button disabled={followingInProgress.some(id => id === user.id)} onClick={onClickUnFollowHandler} className={s.button}>Unfollow</button>
-                            : <button disabled={followingInProgress.some(id => id === user.id)} onClick={onClickFollowHandler} className={s.button}>Follow</button>}
+                            ? <Button disabled={followingInProgress.some(id => id === user.id)}
+                                      onClick={onClickUnFollowHandler}
+                                      className={s.button}
+                                      danger={true}
+                            >Unfollow</Button>
+                            : <Button disabled={followingInProgress.some(id => id === user.id)}
+                                      onClick={onClickFollowHandler}
+                                      className={s.button}
+                            >Follow</Button>}
                     </div>
                 </div>
                 <Descriptions layout="vertical" labelStyle={{fontWeight: 'bold'}} >
