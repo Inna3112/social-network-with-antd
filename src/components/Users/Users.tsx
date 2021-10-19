@@ -1,7 +1,7 @@
 import React from 'react';
 import {UsersType} from '../../redux/users-reducer';
 import User from './User/User';
-import {Pagination} from "antd";
+import {BackTop, Pagination} from "antd";
 
 
 type PropsType = {
@@ -28,6 +28,17 @@ let Users: React.FC<PropsType> = (props) => {
         unFollow
     } = props
 
+    const style = {
+        height: 40,
+        width: 40,
+        lineHeight: '40px',
+        borderRadius: 4,
+        backgroundColor: '#1088e9',
+        color: '#fff',
+        textAlign: 'center' as 'center',
+        fontSize: 14,
+    }
+
     return <div>
         <Pagination defaultCurrent={6}
                     total={totalUsersCount}
@@ -42,6 +53,11 @@ let Users: React.FC<PropsType> = (props) => {
                                   unFollow={unFollow}
                                   followingInProgress={followingInProgress}/>
             )}
+        </div>
+        <div>
+            <BackTop>
+               <div style={style}>UP</div>
+            </BackTop>
         </div>
     </div>
 }
